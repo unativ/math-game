@@ -1,3 +1,3 @@
-** Math Game built with Redux **
+# Math Game built with Redux 
 
-*** Under Construction ***
+## Under Construction 
