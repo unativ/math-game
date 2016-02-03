@@ -1,0 +1,14 @@
+{
+  waitingForAnswer: false,
+  correctAnswer: false,
+  id: 3,
+  turn: 7,
+  nowPlaying: 3,
+  question: '14 + 2',
+  players: [
+    { id:1 questions: [true, false, true, true, true] },
+    { id:2 questions: [false, false, true, true, false] },
+    { id:3 questions: [true, true, true, true] }
+  ]
+}
+

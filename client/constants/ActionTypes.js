@@ -1,1 +1,4 @@
-export const SUBMIT_ANSWER = 'SUBMIT_ANSWER'
+export const SUBMIT_ANSWER  = 'SUBMIT_ANSWER';
+export const CHECK_ANSWER   = 'CHECK_ANSWER';
+export const RECEIVE_ANSWER = 'RECEIVE_ANSWER';
+

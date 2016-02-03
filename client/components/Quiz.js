@@ -4,7 +4,8 @@ class Quiz extends Component {
   constructor(props, context) {
     super (props, context);
     this.state = {
-      text: ''
+      text: '',
+      answerSubmitted: false
     }
   }
 
@@ -13,7 +14,9 @@ class Quiz extends Component {
   }
 
   handleSubmit(e) {
-    console.log("handleSubmit");
+    // send the answer to the server and trigger an action with the result (correct/incorrect)
+    console.log("handleSubmit", this.props);
+    this.setState({answerSubmitted: true});
     this.props.submitAnswer(this.state.text);
   }
 
@@ -29,7 +32,9 @@ class Quiz extends Component {
           value={this.state.text}
           onChange={this.handleChange.bind(this)}
           />
-        <button onClick={this.handleSubmit.bind(this)}>
+        <button
+          disabled={this.state.answerSubmitted}
+          onClick={this.handleSubmit.bind(this)} >
           Send
         </button>
       </div>
@@ -38,8 +43,7 @@ class Quiz extends Component {
 }
 
 Quiz.propTypes = {
-  question: PropTypes.string.isRequired,
-  submitAnswer: PropTypes.func.isRequired
+  question: PropTypes.string.isRequired
 }
 
 export default Quiz
