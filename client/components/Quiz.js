@@ -31,9 +31,10 @@ class Quiz extends Component {
           placeholder="?"
           value={this.state.text}
           onChange={this.handleChange.bind(this)}
+          onKeyDown={this.handleSubmit.bind(this)}
           />
         <button
-          disabled={this.state.answerSubmitted}
+          //disabled={this.state.answerSubmitted}
           onClick={this.handleSubmit.bind(this)} >
           Send
         </button>
