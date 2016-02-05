@@ -22,7 +22,7 @@ export function postAnswerToServer(answer) {
     dispatch(checkAnswer);
     console.log("postAnswerToServer", answer);
 
-    return axios.post('http://localhost:8000/check_answer', { answer: answer} )
+    return axios.post('http://localhost:3001/check_answer', { answer: answer} )
       //.then(response => response.json())
       .then(json => dispatch(receiveAnswer(json)))
       .catch(error => console.log(error));

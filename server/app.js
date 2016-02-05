@@ -1,6 +1,10 @@
-var express = require('express');
-var app = express();
-var PORT = 3001;
+'use strict';
+
+let express = require('express');
+var bodyParser = require('body-parser')
+let app = express();
+let PORT = 3001;
+app.use(bodyParser.json()); 
 
 app.get('/', function (req, res) {
   res.send('Hello World!');
@@ -19,13 +23,13 @@ app.use(function(req, res, next) {
 });
 
 
-var resultObject = {
-	question: "50 + 5 from server",
-	nowPlaying: true
-}
-
-app.post('/answer', function (req, res) {
+app.post('/check_answer', function (req, res) {
+  var resultObject = {
+    question: "50 + 5 from server",
+    correctAnswer: (req.body.answer == 42)
+  }
   //res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
+  console.log("server:", req.body.answer);
   res.send(JSON.stringify(resultObject));
 });
 

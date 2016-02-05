@@ -10,8 +10,6 @@ var port = 8000
 var compiler = webpack(config)
 app.use(webpackDevMiddleware(compiler, { noInfo: true, publicPath: config.output.publicPath }))
 app.use(webpackHotMiddleware(compiler))
-//app.use(new (require('body-parse'))());
-app.use(bodyParser.json()); 
 
 app.get("/", function(req, res) {
   res.sendFile(__dirname + '/index.html')
