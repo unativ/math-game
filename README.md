@@ -5,7 +5,7 @@
 
 ## Instructions
 
-### Clinet
+### Client
     cd client
     npm install
     npm start
